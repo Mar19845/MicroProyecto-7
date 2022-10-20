@@ -6,7 +6,7 @@ from pygame.locals import(RLEACCEL)
 import math
 
 # randomn seed
-#random.seed(random_seed)
+random.seed(random_seed)
 
 class ModelObject(pygame.sprite.Sprite):
     def __init__(self, sprite_path="",offset=10):
