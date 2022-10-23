@@ -33,7 +33,7 @@ def main():
     ball_shot = False
     robot_won = False
 
-
+    force_goal =0
     while game_running:
         # quit event, click or key
         for event in pygame.event.get():
@@ -59,7 +59,8 @@ def main():
             rnd_rot_dev = math.pi / 6.0 * random.random()
             if random.random() <= 0.5:
                 rnd_rot_dev *= -1.0
-            ball.set_direction(rad=(math.pi / 2.0 + rnd_rot_dev))
+            force_goal = (math.pi / 2.0 + rnd_rot_dev)
+            ball.set_direction(rad=force_goal)
             ball.speed = SPEED
             ball_shot = True
         
@@ -92,6 +93,9 @@ def main():
         # debug messages
         message_surf = message_font.render(f'Distance to ball: {dist:.{2}f}', True, (BLACK))
         screen.blit(message_surf, (25, 25))
+        message_surf3 = message_font.render(f'Kicking force: {force_goal:.{2}f}', True, (BLACK))
+        screen.blit(message_surf3, (25, 75))
+
 
         pygame.display.flip()
 
