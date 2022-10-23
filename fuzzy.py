@@ -15,38 +15,38 @@ class Fuzzy():
             return 1.0
         elif x > SCREEN_DIMENSION/2.0:
             return 0.0
-        return -0.197197430123091 * x + 1.39439486024618
+        return -0.099 * x + 1.23
     
     def distance_medium(x):
         if x <= SCREEN_DIMENSION/2.0:
             return 0.141421512474792 * x
-        return -0.141421312474633 * x + 1.99999858578688
+        return -0.014 * x + 1.99999858578688
     
     def distance_far(x):
         if x <= SCREEN_DIMENSION/2.0:
             return 0.0
         elif x > SCREEN_DIMENSION:
             return 1.0
-        return 0.341420445621966 * x - 2.41420445621966
+        return 0.8 * x - 2.4
     
     def angle_close(x):
         if x <= math.pi / 6.0:
             return 1.0
         elif x >= math.pi / 2.0:
             return 0.0
-        return -0.954929658365891 * x + 1.49999999990451
+        return -0.96 * x + 1.56
     
     def angle_medium(x):
         if x <= math.pi / 2.0:
             return 0.636619772284456 * x
-        return -0.636619772284456 * x + 2
+        return -0.12 * x + 2
     
     def angle_far(x):
         if x <= math.pi / 2.0:
             return 0.0
         elif x >= 3.0 * math.pi / 2.0:
             return 1.0
-        return 0.318309886243549 * x - 0.500000000159155
+        return 0.4 * x - 0.2
     
     def loop(ball,player):
         # get the distance between  the player and the ball
